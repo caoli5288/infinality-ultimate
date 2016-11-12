@@ -2,7 +2,7 @@
 
 Summary: A free and portable font rendering engine
 Name: freetype-infinality-ultimate
-Version: 2.6.3
+Version: 2.6.5
 Release: 1%{?dist}
 License: (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 Group: System Environment/Libraries
@@ -16,8 +16,7 @@ Source5: infinality-settings-generic
 Source6: xft-settings.sh
 
 Patch1:  freetype-2.2.1-enable-valid.patch
-Patch2:  02-upstream-2016.03.26.patch
-Patch3:  03-infinality-2.6.3-2016.03.26.patch
+Patch3:  0002-infinality-2.6.5-2016.08.18.patch
 
 # Enable additional demos
 Patch47:  freetype-2.5.2-more-demos.patch
@@ -87,7 +86,6 @@ FreeType.
 %setup -q -b 1 -a 2 -n freetype-%{version}
 
 %patch1  -p1 -b .enable-valid
-%patch2  -p1 -b .upstream
 %patch3  -p1 -b .infinality
 
 
