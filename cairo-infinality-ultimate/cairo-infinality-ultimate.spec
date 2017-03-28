@@ -4,8 +4,8 @@
 
 Summary:	A 2D graphics library
 Name:		cairo-infinality-ultimate
-Version:	1.14.6
-Release:	2%{?dist}
+Version:	1.14.8
+Release:	3%{?dist}
 URL:		http://cairographics.org
 Source0:	http://cairographics.org/releases/cairo-%{version}.tar.xz
 License:	LGPLv2 or MPLv1.1
@@ -15,7 +15,6 @@ Patch1:         cairo-respect-fontconfig_pb.patch
 Patch2:         cairo-server-side-gradients.patch
 Patch3:         cairo-webkit-html5-fix.patch
 Patch4:         cairo-make-lcdfilter-default.patch
-Patch5:         0001-xlib-Fix-double-free-in-_get_image_surface.patch
 
 BuildRequires: pkgconfig
 BuildRequires: libXrender-devel
@@ -102,7 +101,6 @@ This package contains tools for working with the cairo graphics library.
 
 %prep
 %setup -q -n cairo-%{version}
-%patch5 -p1
 %patch0 -p1 -b .multilib
 %patch4 -p1
 %patch1 -p1
@@ -193,6 +191,9 @@ rm $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/cairo/
 
 %changelog
+* Tue Mar 28 2017 caoli5288 <caoli5288@gmail.com> - 1.14.8-3
+- rebuilt
+
 * Fri Nov 11 2016 caoli5288 <caoli5288@gmail.com> 1.14.6-2
 - new package built with tito
 
